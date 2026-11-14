@@ -4,30 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="font/bootstrap-icons.min.css" rel="stylesheet">
-    
-
     <title>Juego 3 en línea</title>
 </head>
-<body>
+<body class="bg-danger-subtle">
 
-    <header>
-        <!-- Titulo-->
-        <h1 class="text-center"> Juego 3 en línea</h1>
+    <header class="text-center my-4">
+        <h1 class="display-4 fw-bold text-dark"> Juego 3 en línea</h1>
     </header>
 
     <main >
-        
 
-        <section>
+        <section class="m-3">
             <!--Nombres de los jugadores-->
             <div class="container">
-                <div class="row ">
+                <div class="row align-items-center">
                     <div class="col-4">
-                        <img src="img/equis.jpg" alt="Imagen equis" class="" width="50">
+                        <img src="img/equis.jpg" alt="Imagen equis" class="img-fluid">
                     </div>
-                    <div class="col-8">
-                        <input type="text" class="form-control">
+                    <div class="col-8 ">
+                        <input type="text" id="jugador1" class="form-control" placeholder="Jugador1" maxlength= "15">
                     </div>
                 </div>
             </div>
@@ -35,47 +30,189 @@
             <div class="container">
                 <div class="row ">
                     <div class="col-4">
-                        <img src="img/circulo.jpg" alt="Imagen equis" class="" width="50">
+                        <img src="img/circulo.jpg" alt="Imagen circulo" class="img-fluid" >
                     </div>
                     <div class="col-8">
-                        <input type="text" class="form-control">
+                        <input type="text" id="jugador2" class="form-control" placeholder="Jugador2" maxlength= "15">
                     </div>
                 </div>
             </div>
         </section>
-        <br>
-        
-        <button type="button" class="btn btn-primary text-center">Jugar</button>
-            
 
-        <!--Tablero 3 en linea--> 
-        <section>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
-                    <table class="table" >
-                    <tr>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                    </tr>
-                    <tr>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                    </tr>
-                    <tr>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                        <th><img src="img/fondo.jpg" alt="Imagen equis" class="" width="50"></th>
-                    </tr>
-                </table>
+        <div class="d-flex justify-content-center mt-3">
+            <button type="button"class="btn btn-secondary" onclick="iniciarJuego()"> INICIAR JUEGO </button>
+        </div>
+
+
+        <div class="d-flex justify-content-center mt-3">
+            <p class="fs-5 fw-bold">Turno:<span id="nombre"> </span> </p>
+        </div>
+
+        <!--Tablero 3 en linea-->
+        <section class="container">
+            <div class="row justify-content-center">
+                <div class="col-10">
+                    <div class="row row-cols-3 g-1">
+
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero0" src="img/fondo.jpg" onclick="jugar(0)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero1" src="img/fondo.jpg" onclick="jugar(1)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero2" src="img/fondo.jpg" onclick="jugar(2)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero3" src="img/fondo.jpg" onclick="jugar(3)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero4" src="img/fondo.jpg" onclick="jugar(4)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero5" src="img/fondo.jpg" onclick="jugar(5)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero6" src="img/fondo.jpg" onclick="jugar(6)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero7" src="img/fondo.jpg" onclick="jugar(7)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="ratio ratio-1x1">
+                                <img id="casillero8" src="img/fondo.jpg" onclick="jugar(8)" class="w-100 h-100 object-fit-cover">
+                            </div>
+                        </div>
+
+                    </div>
                 </div>
             </div>
-        
-            
         </section>
+
     </main>
-    
+
+    <script >
+        let jugadorActual = "X";
+        let tablero = ["","","","","","","","",""];
+        let juegoFinalizado = false;
+        let jugador1 = "";
+        let jugador2 = "";
+
+        // VERIFICACION DE COMBINACIONES GANADORAS
+        function verificarGanador(){
+                let combinaciones = [
+                    [0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],
+                    [0,4,8],[2,4,6]
+                ];
+                for(let j=0; j<combinaciones.length;j++){
+                let a = combinaciones[j][0];
+                let b = combinaciones[j][1];
+                let c = combinaciones[j][2];
+                if(tablero[a]!=""&& tablero[a]==tablero[b]&& tablero[b]==tablero[c]){
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function jugar(posicion){
+            if(juegoFinalizado == true){
+                return;
+            }
+
+            jugador1 = document.getElementById("jugador1").value;
+            jugador2 = document.getElementById("jugador2").value;
+
+            if(jugador1.trim()==""|| jugador2.trim()==""){
+                alert("Ingrese los nombres de los jugadores");
+                return;
+            }
+
+            if(tablero[posicion]!=""){
+                return;
+            }
+            tablero[posicion] = jugadorActual;
+
+            let casillero = document.getElementById("casillero"+posicion);
+
+            if(jugadorActual == "X"){
+                casillero.src = "img/equis.jpg";
+            }else{
+                casillero.src = "img/circulo.jpg";
+            }
+
+            if(verificarGanador()){
+                juegoFinalizado = true;
+                if(jugadorActual == "X"){
+                    alert("Gano "+ jugador1);
+                }else{
+                    alert("Gano "+ jugador2);
+                }
+                return;
+            }
+            // EMPATE
+            let empate = true;
+            for (let i = 0; i < 9; i++) {
+                if(tablero[i]==""){
+                    empate=false;
+                }
+            }
+            if(empate == true){
+                juegoFinalizado=true;
+                alert("Empate");
+                return;
+            }
+            // ACTUALIZAR TURNO
+            if(jugadorActual=="X"){
+                jugadorActual= "O";
+                document.getElementById("nombre").textContent = jugador2;
+            }else{
+                jugadorActual="X";
+                document.getElementById("nombre").textContent = jugador1;
+            }
+        }
+
+        function iniciarJuego() {
+
+            jugador1 = document.getElementById("jugador1").value;
+            jugador2 = document.getElementById("jugador2").value;
+
+            if (jugador1.trim() == "" || jugador2.trim() == "") {
+                alert("Ingrese los nombres de los jugadores");
+                return;
+            }
+
+            for (let i = 0; i < 9; i++) {
+                tablero[i] = "";
+
+                let casillero = document.getElementById("casillero" + i);
+                casillero.src = "img/fondo.jpg";
+            }
+
+            jugadorActual = "X";
+            juegoFinalizado = false;
+
+            document.getElementById("nombre").textContent = jugador1;
+
+        }
+    </script>
 </body>
 </html>
